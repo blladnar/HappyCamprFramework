@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7089C49C1401986F00055124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
+		7089C4A61401986F00055124 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4A41401986F00055124 /* InfoPlist.strings */; };
+		7089C4A81401986F00055124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4A71401986F00055124 /* main.m */; };
+		7089C4AC1401986F00055124 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4AA1401986F00055124 /* Credits.rtf */; };
+		7089C4AF1401986F00055124 /* CampfireStreamingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4AE1401986F00055124 /* CampfireStreamingAppDelegate.m */; };
+		7089C4B21401986F00055124 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4B01401986F00055124 /* MainMenu.xib */; };
+		7089C4BA1401986F00055124 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C4B91401986F00055124 /* SenTestingKit.framework */; };
+		7089C4BB1401986F00055124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
+		7089C4C31401986F00055124 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4C11401986F00055124 /* InfoPlist.strings */; };
+		7089C4C51401986F00055124 /* CampfireStreamingTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4C41401986F00055124 /* CampfireStreamingTests.h */; };
+		7089C4C71401986F00055124 /* CampfireStreamingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4C61401986F00055124 /* CampfireStreamingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7089C4BC1401986F00055124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7089C48E1401986F00055124 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7089C4961401986F00055124;
+			remoteInfo = CampfireStreaming;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7089C4971401986F00055124 /* CampfireStreaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampfireStreaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7089C49B1401986F00055124 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7089C49E1401986F00055124 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7089C49F1401986F00055124 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7089C4A01401986F00055124 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7089C4A31401986F00055124 /* CampfireStreaming-Info.plist */ = {isa = PBXFileReference; path = "CampfireStreaming-Info.plist"; sourceTree = "<group>"; };
+		7089C4A51401986F00055124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7089C4A71401986F00055124 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7089C4A91401986F00055124 /* CampfireStreaming-Prefix.pch */ = {isa = PBXFileReference; path = "CampfireStreaming-Prefix.pch"; sourceTree = "<group>"; };
+		7089C4AB1401986F00055124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7089C4AD1401986F00055124 /* CampfireStreamingAppDelegate.h */ = {isa = PBXFileReference; path = CampfireStreamingAppDelegate.h; sourceTree = "<group>"; };
+		7089C4AE1401986F00055124 /* CampfireStreamingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampfireStreamingAppDelegate.m; sourceTree = "<group>"; };
+		7089C4B11401986F00055124 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7089C4B81401986F00055124 /* CampfireStreamingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampfireStreamingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7089C4B91401986F00055124 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7089C4C01401986F00055124 /* CampfireStreamingTests-Info.plist */ = {isa = PBXFileReference; path = "CampfireStreamingTests-Info.plist"; sourceTree = "<group>"; };
+		7089C4C21401986F00055124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7089C4C41401986F00055124 /* CampfireStreamingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CampfireStreamingTests.h; sourceTree = "<group>"; };
+		7089C4C61401986F00055124 /* CampfireStreamingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampfireStreamingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7089C4941401986F00055124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C49C1401986F00055124 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7089C4B41401986F00055124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C4BA1401986F00055124 /* SenTestingKit.framework in Frameworks */,
+				7089C4BB1401986F00055124 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7089C48C1401986F00055124 = {
+			isa = PBXGroup;
+			children = (
+				7089C4A11401986F00055124 /* CampfireStreaming */,
+				7089C4BE1401986F00055124 /* CampfireStreamingTests */,
+				7089C49A1401986F00055124 /* Frameworks */,
+				7089C4981401986F00055124 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7089C4981401986F00055124 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7089C4971401986F00055124 /* CampfireStreaming.app */,
+				7089C4B81401986F00055124 /* CampfireStreamingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7089C49A1401986F00055124 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7089C49B1401986F00055124 /* Cocoa.framework */,
+				7089C4B91401986F00055124 /* SenTestingKit.framework */,
+				7089C49D1401986F00055124 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7089C49D1401986F00055124 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7089C49E1401986F00055124 /* AppKit.framework */,
+				7089C49F1401986F00055124 /* CoreData.framework */,
+				7089C4A01401986F00055124 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7089C4A11401986F00055124 /* CampfireStreaming */ = {
+			isa = PBXGroup;
+			children = (
+				7089C4AD1401986F00055124 /* CampfireStreamingAppDelegate.h */,
+				7089C4AE1401986F00055124 /* CampfireStreamingAppDelegate.m */,
+				7089C4B01401986F00055124 /* MainMenu.xib */,
+				7089C4A21401986F00055124 /* Supporting Files */,
+			);
+			path = CampfireStreaming;
+			sourceTree = "<group>";
+		};
+		7089C4A21401986F00055124 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7089C4A31401986F00055124 /* CampfireStreaming-Info.plist */,
+				7089C4A41401986F00055124 /* InfoPlist.strings */,
+				7089C4A71401986F00055124 /* main.m */,
+				7089C4A91401986F00055124 /* CampfireStreaming-Prefix.pch */,
+				7089C4AA1401986F00055124 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7089C4BE1401986F00055124 /* CampfireStreamingTests */ = {
+			isa = PBXGroup;
+			children = (
+				7089C4C41401986F00055124 /* CampfireStreamingTests.h */,
+				7089C4C61401986F00055124 /* CampfireStreamingTests.m */,
+				7089C4BF1401986F00055124 /* Supporting Files */,
+			);
+			path = CampfireStreamingTests;
+			sourceTree = "<group>";
+		};
+		7089C4BF1401986F00055124 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7089C4C01401986F00055124 /* CampfireStreamingTests-Info.plist */,
+				7089C4C11401986F00055124 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7089C4961401986F00055124 /* CampfireStreaming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7089C4CA1401986F00055124 /* Build configuration list for PBXNativeTarget "CampfireStreaming" */;
+			buildPhases = (
+				7089C4931401986F00055124 /* Sources */,
+				7089C4941401986F00055124 /* Frameworks */,
+				7089C4951401986F00055124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampfireStreaming;
+			productName = CampfireStreaming;
+			productReference = 7089C4971401986F00055124 /* CampfireStreaming.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7089C4B71401986F00055124 /* CampfireStreamingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7089C4CD1401986F00055124 /* Build configuration list for PBXNativeTarget "CampfireStreamingTests" */;
+			buildPhases = (
+				7089C4B31401986F00055124 /* Sources */,
+				7089C4B41401986F00055124 /* Frameworks */,
+				7089C4B51401986F00055124 /* Resources */,
+				7089C4B61401986F00055124 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7089C4BD1401986F00055124 /* PBXTargetDependency */,
+			);
+			name = CampfireStreamingTests;
+			productName = CampfireStreamingTests;
+			productReference = 7089C4B81401986F00055124 /* CampfireStreamingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7089C48E1401986F00055124 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 7089C4911401986F00055124 /* Build configuration list for PBXProject "CampfireStreaming" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7089C48C1401986F00055124;
+			productRefGroup = 7089C4981401986F00055124 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7089C4961401986F00055124 /* CampfireStreaming */,
+				7089C4B71401986F00055124 /* CampfireStreamingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7089C4951401986F00055124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C4A61401986F00055124 /* InfoPlist.strings in Resources */,
+				7089C4AC1401986F00055124 /* Credits.rtf in Resources */,
+				7089C4B21401986F00055124 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7089C4B51401986F00055124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C4C31401986F00055124 /* InfoPlist.strings in Resources */,
+				7089C4C51401986F00055124 /* CampfireStreamingTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7089C4B61401986F00055124 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7089C4931401986F00055124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C4A81401986F00055124 /* main.m in Sources */,
+				7089C4AF1401986F00055124 /* CampfireStreamingAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7089C4B31401986F00055124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7089C4C71401986F00055124 /* CampfireStreamingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7089C4BD1401986F00055124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7089C4961401986F00055124 /* CampfireStreaming */;
+			targetProxy = 7089C4BC1401986F00055124 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7089C4A41401986F00055124 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7089C4A51401986F00055124 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7089C4AA1401986F00055124 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7089C4AB1401986F00055124 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7089C4B01401986F00055124 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7089C4B11401986F00055124 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		7089C4C11401986F00055124 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7089C4C21401986F00055124 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7089C4C81401986F00055124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7089C4C91401986F00055124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7089C4CB1401986F00055124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				INFOPLIST_FILE = "CampfireStreaming/CampfireStreaming-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7089C4CC1401986F00055124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				INFOPLIST_FILE = "CampfireStreaming/CampfireStreaming-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7089C4CE1401986F00055124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CampfireStreaming.app/Contents/MacOS/CampfireStreaming";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				INFOPLIST_FILE = "CampfireStreamingTests/CampfireStreamingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7089C4CF1401986F00055124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CampfireStreaming.app/Contents/MacOS/CampfireStreaming";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				INFOPLIST_FILE = "CampfireStreamingTests/CampfireStreamingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7089C4911401986F00055124 /* Build configuration list for PBXProject "CampfireStreaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7089C4C81401986F00055124 /* Debug */,
+				7089C4C91401986F00055124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7089C4CA1401986F00055124 /* Build configuration list for PBXNativeTarget "CampfireStreaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7089C4CB1401986F00055124 /* Debug */,
+				7089C4CC1401986F00055124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7089C4CD1401986F00055124 /* Build configuration list for PBXNativeTarget "CampfireStreamingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7089C4CE1401986F00055124 /* Debug */,
+				7089C4CF1401986F00055124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7089C48E1401986F00055124 /* Project object */;
+}
