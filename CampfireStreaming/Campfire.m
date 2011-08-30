@@ -51,6 +51,7 @@
    [streamRequest setAuthenticationScheme:(NSString *)kCFHTTPAuthenticationSchemeBasic];
    [streamRequest setUsername:authToken];
    [streamRequest setPassword:@"X"];
+   [streamRequest setShouldAttemptPersistentConnection:YES];
    
    [streamRequest startAsynchronous];   
 }
@@ -58,24 +59,24 @@
 
 -(void)request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
 {
-//   NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//   NSLog(@"%@", string);   
+   NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
    
-   BOOL dataWasCompressed = [request isResponseCompressed]; // Was the response gzip compressed?
-   NSData *compressedResponse = [request rawResponseData]; // Compressed data
-   NSData *uncompressedData = [request responseData]; // Uncompressed data
-   NSString *response = [request responseString]; 
-   NSLog(@"%@", [request responseStatusMessage]);
-   NSLog(@"%i", [request responseStatusCode]);
-   NSLog(@"Response %@", response);
-   NSLog(@"%i", [[request responseData] length]);
-   NSLog(@"%@", [request responseCookies]);
-//   NSLog(<#NSString *format, ...#>)
- //  Message *message = nil;
-   //[delegate messageReceived:message];
-//   SBJsonParser *jsonParser = [[SBJsonParser new] autorelease];
-//   id parsedObject = [jsonParser objectWithString:string];
-//   NSLog(@"%@", parsedObject);
+   SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+   
+   if( !([data length] > 1) )
+      return;
+   
+   NSDictionary *messageDict = [jsonParser objectWithString:dataString];
+   Message *message = [[[Message alloc] init] autorelease];
+   
+   message.messageBody = [messageDict objectForKey:@"body"];
+   
+
+   message.timeStamp = [NSDate dateWithString:[messageDict objectForKey:@"created_at"]];
+   message.messageId = [[messageDict objectForKey:@"id"] intValue];
+   message.messageType = [messageDict objectForKey:@"type"];
+   message.userID = [[messageDict objectForKey:@"user_id"] intValue];
+   [delegate messageReceived:message];
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
@@ -89,15 +90,9 @@
    NSLog(@"%@", request);
 }
 
--(void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
-{
-   NSLog(@"%@", responseHeaders);
-}
-
 -(void)sendText:(NSString*)messageText toRoom:(NSString*)roomID
 {   
    NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.xml",campfireURL,roomID];
-   
    
    __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
    

@@ -24,7 +24,6 @@
 //    {
 //       NSLog(@"%@", messages);
 //    }];
-   queue = [[ASINetworkQueue alloc] init];
 }
 
 -(void)messageReceived:(Message *)message
