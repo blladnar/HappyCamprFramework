@@ -39,6 +39,35 @@
 		7089C5211401EF9300055124 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51A1401EF9300055124 /* SBJsonParser.m */; };
 		7089C5221401EF9300055124 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51C1401EF9300055124 /* SBJsonWriter.m */; };
 		7089C56D1407300700055124 /* UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* UploadFile.m */; };
+		7094E3D414185961002A09C5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
+		7094E3DA14185961002A09C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7094E3D814185961002A09C5 /* InfoPlist.strings */; };
+		7094E3E3141859B5002A09C5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5121401EF9300055124 /* NSObject+SBJSON.m */; };
+		7094E3E4141859B5002A09C5 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5141401EF9300055124 /* NSString+SBJSON.m */; };
+		7094E3E5141859B5002A09C5 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5161401EF9300055124 /* SBJSON.m */; };
+		7094E3E6141859B5002A09C5 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5181401EF9300055124 /* SBJsonBase.m */; };
+		7094E3E7141859B5002A09C5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51A1401EF9300055124 /* SBJsonParser.m */; };
+		7094E3E8141859B5002A09C5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51C1401EF9300055124 /* SBJsonWriter.m */; };
+		7094E3E9141859B5002A09C5 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5001401EB9300055124 /* Room.m */; };
+		7094E3EA141859B5002A09C5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5021401EB9300055124 /* Message.m */; };
+		7094E3EB141859B5002A09C5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5041401EB9300055124 /* User.m */; };
+		7094E3EC141859B5002A09C5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4DE14019A3E00055124 /* ASIDataCompressor.m */; };
+		7094E3ED141859B5002A09C5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E014019A3E00055124 /* ASIDataDecompressor.m */; };
+		7094E3EE141859B5002A09C5 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E214019A3E00055124 /* ASIDownloadCache.m */; };
+		7094E3EF141859B5002A09C5 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E414019A3E00055124 /* ASIFormDataRequest.m */; };
+		7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E614019A3E00055124 /* ASIHTTPRequest.m */; };
+		7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EA14019A3E00055124 /* ASIInputStream.m */; };
+		7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EC14019A3E00055124 /* ASINetworkQueue.m */; };
+		7094E3F3141859B5002A09C5 /* Campfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4FD1401EB3800055124 /* Campfire.m */; };
+		7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* UploadFile.m */; };
+		7094E3F6141859E0002A09C5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F5141859E0002A09C5 /* libz.dylib */; };
+		7094E3F8141859E6002A09C5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F7141859E6002A09C5 /* CoreServices.framework */; };
+		7094E3FA14185A07002A09C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F914185A07002A09C5 /* SystemConfiguration.framework */; };
+		7094E42E14185DBA002A09C5 /* Room.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FF1401EB9300055124 /* Room.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E42F14185DBA002A09C5 /* Message.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5011401EB9300055124 /* Message.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43014185DBA002A09C5 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5031401EB9300055124 /* User.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43114185DBA002A09C5 /* Campfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FC1401EB3800055124 /* Campfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43214185DBA002A09C5 /* UploadFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C56B1407300600055124 /* UploadFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43614186101002A09C5 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4E814019A3E00055124 /* ASIHTTPRequestDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +146,13 @@
 		7089C51C1401EF9300055124 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		7089C56B1407300600055124 /* UploadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadFile.h; sourceTree = "<group>"; };
 		7089C56C1407300700055124 /* UploadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadFile.m; sourceTree = "<group>"; };
+		7094E3D314185961002A09C5 /* HappyCampfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HappyCampfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7094E3D714185961002A09C5 /* HappyCampfire-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyCampfire-Info.plist"; sourceTree = "<group>"; };
+		7094E3D914185961002A09C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7094E3DB14185961002A09C5 /* HappyCampfire-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HappyCampfire-Prefix.pch"; sourceTree = "<group>"; };
+		7094E3F5141859E0002A09C5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7094E3F7141859E6002A09C5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		7094E3F914185A07002A09C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,17 +176,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7094E3CF14185961002A09C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7094E3FA14185A07002A09C5 /* SystemConfiguration.framework in Frameworks */,
+				7094E3F8141859E6002A09C5 /* CoreServices.framework in Frameworks */,
+				7094E3F6141859E0002A09C5 /* libz.dylib in Frameworks */,
+				7094E3D414185961002A09C5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7089C48C1401986F00055124 = {
 			isa = PBXGroup;
 			children = (
+				7094E3F914185A07002A09C5 /* SystemConfiguration.framework */,
+				7094E3F7141859E6002A09C5 /* CoreServices.framework */,
+				7094E3F5141859E0002A09C5 /* libz.dylib */,
 				7089C4FA14019AA000055124 /* CoreServices.framework */,
 				7089C4F814019A9600055124 /* libz.dylib */,
 				7089C4F614019A8C00055124 /* SystemConfiguration.framework */,
 				7089C4A11401986F00055124 /* CampfireStreaming */,
 				7089C4BE1401986F00055124 /* CampfireStreamingTests */,
+				7094E3D514185961002A09C5 /* HappyCampfire */,
 				7089C49A1401986F00055124 /* Frameworks */,
 				7089C4981401986F00055124 /* Products */,
 			);
@@ -161,6 +212,7 @@
 			children = (
 				7089C4971401986F00055124 /* CampfireStreaming.app */,
 				7089C4B81401986F00055124 /* CampfireStreamingTests.octest */,
+				7094E3D314185961002A09C5 /* HappyCampfire.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +338,41 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		7094E3D514185961002A09C5 /* HappyCampfire */ = {
+			isa = PBXGroup;
+			children = (
+				7094E3D614185961002A09C5 /* Supporting Files */,
+			);
+			path = HappyCampfire;
+			sourceTree = "<group>";
+		};
+		7094E3D614185961002A09C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7094E3D714185961002A09C5 /* HappyCampfire-Info.plist */,
+				7094E3D814185961002A09C5 /* InfoPlist.strings */,
+				7094E3DB14185961002A09C5 /* HappyCampfire-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7094E3D014185961002A09C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7094E43614186101002A09C5 /* ASIHTTPRequestDelegate.h in Headers */,
+				7094E42E14185DBA002A09C5 /* Room.h in Headers */,
+				7094E42F14185DBA002A09C5 /* Message.h in Headers */,
+				7094E43014185DBA002A09C5 /* User.h in Headers */,
+				7094E43114185DBA002A09C5 /* Campfire.h in Headers */,
+				7094E43214185DBA002A09C5 /* UploadFile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7089C4961401986F00055124 /* CampfireStreaming */ = {
@@ -325,6 +411,24 @@
 			productReference = 7089C4B81401986F00055124 /* CampfireStreamingTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		7094E3D214185961002A09C5 /* HappyCampfire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7094E3E114185961002A09C5 /* Build configuration list for PBXNativeTarget "HappyCampfire" */;
+			buildPhases = (
+				7094E3CE14185961002A09C5 /* Sources */,
+				7094E3CF14185961002A09C5 /* Frameworks */,
+				7094E3D014185961002A09C5 /* Headers */,
+				7094E3D114185961002A09C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappyCampfire;
+			productName = HappyCampfire;
+			productReference = 7094E3D314185961002A09C5 /* HappyCampfire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -344,6 +448,7 @@
 			targets = (
 				7089C4961401986F00055124 /* CampfireStreaming */,
 				7089C4B71401986F00055124 /* CampfireStreamingTests */,
+				7094E3D214185961002A09C5 /* HappyCampfire */,
 			);
 		};
 /* End PBXProject section */
@@ -365,6 +470,14 @@
 			files = (
 				7089C4C31401986F00055124 /* InfoPlist.strings in Resources */,
 				7089C4C51401986F00055124 /* CampfireStreamingTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7094E3D114185961002A09C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7094E3DA14185961002A09C5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +535,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7094E3CE14185961002A09C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7094E3E3141859B5002A09C5 /* NSObject+SBJSON.m in Sources */,
+				7094E3E4141859B5002A09C5 /* NSString+SBJSON.m in Sources */,
+				7094E3E5141859B5002A09C5 /* SBJSON.m in Sources */,
+				7094E3E6141859B5002A09C5 /* SBJsonBase.m in Sources */,
+				7094E3E7141859B5002A09C5 /* SBJsonParser.m in Sources */,
+				7094E3E8141859B5002A09C5 /* SBJsonWriter.m in Sources */,
+				7094E3E9141859B5002A09C5 /* Room.m in Sources */,
+				7094E3EA141859B5002A09C5 /* Message.m in Sources */,
+				7094E3EB141859B5002A09C5 /* User.m in Sources */,
+				7094E3EC141859B5002A09C5 /* ASIDataCompressor.m in Sources */,
+				7094E3ED141859B5002A09C5 /* ASIDataDecompressor.m in Sources */,
+				7094E3EE141859B5002A09C5 /* ASIDownloadCache.m in Sources */,
+				7094E3EF141859B5002A09C5 /* ASIFormDataRequest.m in Sources */,
+				7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */,
+				7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */,
+				7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */,
+				7094E3F3141859B5002A09C5 /* Campfire.m in Sources */,
+				7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -461,6 +599,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				7089C4C21401986F00055124 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7094E3D814185961002A09C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7094E3D914185961002A09C5 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -563,6 +709,36 @@
 			};
 			name = Release;
 		};
+		7094E3DF14185961002A09C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyCampfire/HappyCampfire-Prefix.pch";
+				INFOPLIST_FILE = "HappyCampfire/HappyCampfire-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Resources/$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		7094E3E014185961002A09C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyCampfire/HappyCampfire-Prefix.pch";
+				INFOPLIST_FILE = "HappyCampfire/HappyCampfire-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Resources/$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +768,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7094E3E114185961002A09C5 /* Build configuration list for PBXNativeTarget "HappyCampfire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7094E3DF14185961002A09C5 /* Debug */,
+				7094E3E014185961002A09C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
