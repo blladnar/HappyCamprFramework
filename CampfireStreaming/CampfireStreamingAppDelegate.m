@@ -105,6 +105,13 @@
 {
    [campfire unlockRoom:@"431886" WithCompletionHandler:^(NSError* error){}];
 }
+
+- (IBAction)Authenticate:(id)sender 
+{
+   [campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(User* user, NSError *error){
+      NSLog(@"%@",user.authToken);
+   }];
+}
 - (IBAction)GetUser:(id)sender 
 {
    [campfire getUserWithID:@"988871" withCompletionHandler:^(User *user, NSError *error){

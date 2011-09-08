@@ -61,27 +61,44 @@
 {
    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
    
-   SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-   
    if( !([data length] > 1) )
       return;
    
-   NSDictionary *messageDict = [jsonParser objectWithString:dataString];
-   Message *message = [[[Message alloc] init] autorelease];
+   NSArray *messagesInStrings = [dataString componentsSeparatedByString:@"}"];
+   NSMutableArray *fixedMessageStrings = [NSMutableArray array];
+   int i=0;
+   for( NSString *messageString in  messagesInStrings )
+   {
+      [fixedMessageStrings addObject:[messageString stringByAppendingString:@"}"]];
+      i++;
+   }
    
-   message.messageBody = [messageDict objectForKey:@"body"];
+   for( NSString *fixedString in fixedMessageStrings )
+   {
+      SBJsonParser *jsonParser = [[[SBJsonParser alloc] init] autorelease];
+      
+      if( !([fixedString length] > 2) )
+         continue;
+      
+      id messageDict = [jsonParser objectWithString:fixedString];
+      Message *message = [[[Message alloc] init] autorelease];
+      
+      message.messageBody = [messageDict objectForKey:@"body"];
+      
+      
+      message.timeStamp = [NSDate dateWithString:[messageDict objectForKey:@"created_at"]];
+      message.messageId = [[messageDict objectForKey:@"id"] intValue];
+      message.messageType = [messageDict objectForKey:@"type"];
+      message.userID = [[messageDict objectForKey:@"user_id"] intValue];
+      [delegate messageReceived:message];      
+   }
    
-
-   message.timeStamp = [NSDate dateWithString:[messageDict objectForKey:@"created_at"]];
-   message.messageId = [[messageDict objectForKey:@"id"] intValue];
-   message.messageType = [messageDict objectForKey:@"type"];
-   message.userID = [[messageDict objectForKey:@"user_id"] intValue];
-   [delegate messageReceived:message];
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
    NSLog(@"Request Failed %@",[request error]);
+   [delegate listeningFailed:[request error]];
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request
@@ -420,6 +437,7 @@
    user.name = [[[element elementsForName:@"name"] lastObject] stringValue];
    user.email = [[[element elementsForName:@"email-address"] lastObject] stringValue];
    user.avatarURL = [[[element elementsForName:@"avatar-url"] lastObject] stringValue];
+   user.authToken = [[[element elementsForName:@"api-auth-token"] lastObject] stringValue];
    
    return user;
 }
@@ -454,6 +472,27 @@
       NSXMLElement *userElement = [responseDoc rootElement];
       User *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
+      
+   }];
+   
+   [request startAsynchronous];     
+}
+
+-(void)authenticateUserWithName:(NSString*)userName password:(NSString*)password completionHandler:(void(^)(User *user, NSError*error))handler
+{
+   NSString *urlString = [NSString stringWithFormat:@"%@/users/me.xml", campfireURL];
+   
+   __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
+   [request setUsername:userName];
+   [request setPassword:password];
+   
+   [request setCompletionBlock:^{
+      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
+      
+      NSXMLElement *userElement = [responseDoc rootElement];
+      User *user = [self userWithUserElement:userElement];
+      handler( user, [request error] );
+      authToken = user.authToken;
       
    }];
    

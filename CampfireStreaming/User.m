@@ -14,6 +14,7 @@
 @synthesize name;
 @synthesize email;
 @synthesize avatarURL;
+@synthesize authToken;
 
 
 - (id)init

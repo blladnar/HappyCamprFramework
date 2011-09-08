@@ -14,6 +14,8 @@
    NSWindow *window;
    Campfire *campfire;
    NSOperationQueue *queue;
+   IBOutlet NSTextField *username;
+   IBOutlet NSSecureTextField *password;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -28,5 +30,6 @@
 - (IBAction)LeaveRoom:(id)sender;
 - (IBAction)LockRoom:(id)sender;
 - (IBAction)UnlockRoom:(id)sender;
+- (IBAction)Authenticate:(id)sender;
 
 @end

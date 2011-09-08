@@ -16,6 +16,7 @@
 @protocol CampfireResponseProtocol
 
 -(void)messageReceived:(Message*)message;
+-(void)listeningFailed:(NSError*)error;
 
 @end
 
@@ -48,6 +49,7 @@
 //Users
 -(void)getUserWithID:(NSString*)userID withCompletionHandler:(void(^)(User *user, NSError*error))handler;
 -(void)getAuthenticatedUserInfo:(void(^)(User *user, NSError*error))handler;
+-(void)authenticateUserWithName:(NSString*)userName password:(NSString*)password completionHandler:(void(^)(User *user, NSError*error))handler;
 
 
 @property (assign) id<CampfireResponseProtocol> delegate;

@@ -14,5 +14,6 @@
 @property (retain) NSString* name;
 @property (retain) NSString* email;
 @property (retain) NSString* avatarURL;
+@property (retain) NSString* authToken;
 
 @end
