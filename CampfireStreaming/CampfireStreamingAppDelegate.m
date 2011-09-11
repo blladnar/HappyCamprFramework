@@ -15,7 +15,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-   campfire = [[Campfire alloc] initWithCampfireURL:@"https://randallbrown.campfirenow.com"];
+   campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://randallbrown.campfirenow.com"];
    campfire.delegate = self;
    campfire.authToken = @"60507110c014abd367f2532fcbc65007ee8861f0";
 //   [campfire sendText:@"this is a test" toRoom:@"412475"];
@@ -26,7 +26,7 @@
 //    }];
 }
 
--(void)messageReceived:(Message *)message
+-(void)messageReceived:(HCMessage *)message
 {
    NSLog(@"Message: %@", message);
 }
@@ -53,7 +53,7 @@
 
 - (IBAction)GetRoomInfo:(id)sender 
 {
-   [campfire getRoomWithID:@"431886" completionHandler:^(Room *room)
+   [campfire getRoomWithID:@"431886" completionHandler:^(HCRoom *room)
     {
        NSLog(@"%@", room);
     }];
@@ -108,19 +108,19 @@
 
 - (IBAction)Authenticate:(id)sender 
 {
-   [campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(User* user, NSError *error){
+   [campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(HCUser* user, NSError *error){
       NSLog(@"%@",user.authToken);
    }];
 }
 - (IBAction)GetUser:(id)sender 
 {
-   [campfire getUserWithID:@"988871" withCompletionHandler:^(User *user, NSError *error){
+   [campfire getUserWithID:@"988871" withCompletionHandler:^(HCUser *user, NSError *error){
       NSLog(@"%@", user);
    }];
 }
 - (IBAction)GetMe:(id)sender 
 {
-   [campfire getAuthenticatedUserInfo:^(User* user, NSError *error){
+   [campfire getAuthenticatedUserInfo:^(HCUser* user, NSError *error){
       NSLog(@"%@", user);
    }];
 }

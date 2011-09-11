@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Campfire.h"
+#import "HappyCampfire.h"
 #import "ASINetworkQueue.h"
 
 @interface CampfireStreamingAppDelegate : NSObject <NSApplicationDelegate,CampfireResponseProtocol> {
    NSWindow *window;
-   Campfire *campfire;
+   HappyCampfire *campfire;
    NSOperationQueue *queue;
    IBOutlet NSTextField *username;
    IBOutlet NSSecureTextField *password;

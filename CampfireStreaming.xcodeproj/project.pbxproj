@@ -28,10 +28,9 @@
 		7089C4F714019A8C00055124 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C4F614019A8C00055124 /* SystemConfiguration.framework */; };
 		7089C4F914019A9600055124 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C4F814019A9600055124 /* libz.dylib */; };
 		7089C4FB14019AA000055124 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C4FA14019AA000055124 /* CoreServices.framework */; };
-		7089C4FE1401EB3800055124 /* Campfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4FD1401EB3800055124 /* Campfire.m */; };
-		7089C5051401EB9300055124 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5001401EB9300055124 /* Room.m */; };
-		7089C5061401EB9400055124 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5021401EB9300055124 /* Message.m */; };
-		7089C5071401EB9400055124 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5041401EB9300055124 /* User.m */; };
+		7089C5051401EB9300055124 /* HCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5001401EB9300055124 /* HCRoom.m */; };
+		7089C5061401EB9400055124 /* HCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5021401EB9300055124 /* HCMessage.m */; };
+		7089C5071401EB9400055124 /* HCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5041401EB9300055124 /* HCUser.m */; };
 		7089C51D1401EF9300055124 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5121401EF9300055124 /* NSObject+SBJSON.m */; };
 		7089C51E1401EF9300055124 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5141401EF9300055124 /* NSString+SBJSON.m */; };
 		7089C51F1401EF9300055124 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5161401EF9300055124 /* SBJSON.m */; };
@@ -47,9 +46,9 @@
 		7094E3E6141859B5002A09C5 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5181401EF9300055124 /* SBJsonBase.m */; };
 		7094E3E7141859B5002A09C5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51A1401EF9300055124 /* SBJsonParser.m */; };
 		7094E3E8141859B5002A09C5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51C1401EF9300055124 /* SBJsonWriter.m */; };
-		7094E3E9141859B5002A09C5 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5001401EB9300055124 /* Room.m */; };
-		7094E3EA141859B5002A09C5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5021401EB9300055124 /* Message.m */; };
-		7094E3EB141859B5002A09C5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5041401EB9300055124 /* User.m */; };
+		7094E3E9141859B5002A09C5 /* HCRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5001401EB9300055124 /* HCRoom.m */; };
+		7094E3EA141859B5002A09C5 /* HCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5021401EB9300055124 /* HCMessage.m */; };
+		7094E3EB141859B5002A09C5 /* HCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5041401EB9300055124 /* HCUser.m */; };
 		7094E3EC141859B5002A09C5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4DE14019A3E00055124 /* ASIDataCompressor.m */; };
 		7094E3ED141859B5002A09C5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E014019A3E00055124 /* ASIDataDecompressor.m */; };
 		7094E3EE141859B5002A09C5 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E214019A3E00055124 /* ASIDownloadCache.m */; };
@@ -57,17 +56,17 @@
 		7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E614019A3E00055124 /* ASIHTTPRequest.m */; };
 		7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EA14019A3E00055124 /* ASIInputStream.m */; };
 		7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EC14019A3E00055124 /* ASINetworkQueue.m */; };
-		7094E3F3141859B5002A09C5 /* Campfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4FD1401EB3800055124 /* Campfire.m */; };
 		7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* UploadFile.m */; };
 		7094E3F6141859E0002A09C5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F5141859E0002A09C5 /* libz.dylib */; };
 		7094E3F8141859E6002A09C5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F7141859E6002A09C5 /* CoreServices.framework */; };
 		7094E3FA14185A07002A09C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F914185A07002A09C5 /* SystemConfiguration.framework */; };
-		7094E42E14185DBA002A09C5 /* Room.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FF1401EB9300055124 /* Room.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7094E42F14185DBA002A09C5 /* Message.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5011401EB9300055124 /* Message.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7094E43014185DBA002A09C5 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5031401EB9300055124 /* User.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7094E43114185DBA002A09C5 /* Campfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FC1401EB3800055124 /* Campfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E42E14185DBA002A09C5 /* HCRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FF1401EB9300055124 /* HCRoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E42F14185DBA002A09C5 /* HCMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5011401EB9300055124 /* HCMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43014185DBA002A09C5 /* HCUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5031401EB9300055124 /* HCUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43114185DBA002A09C5 /* HappyCampfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FC1401EB3800055124 /* HappyCampfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7094E43214185DBA002A09C5 /* UploadFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C56B1407300600055124 /* UploadFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7094E43614186101002A09C5 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4E814019A3E00055124 /* ASIHTTPRequestDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70EE0C9E141D7E0D0005CBBC /* HappyCampfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,14 +122,13 @@
 		7089C4F614019A8C00055124 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7089C4F814019A9600055124 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7089C4FA14019AA000055124 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		7089C4FC1401EB3800055124 /* Campfire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Campfire.h; sourceTree = "<group>"; };
-		7089C4FD1401EB3800055124 /* Campfire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Campfire.m; sourceTree = "<group>"; };
-		7089C4FF1401EB9300055124 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
-		7089C5001401EB9300055124 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
-		7089C5011401EB9300055124 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		7089C5021401EB9300055124 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		7089C5031401EB9300055124 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		7089C5041401EB9300055124 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7089C4FC1401EB3800055124 /* HappyCampfire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyCampfire.h; sourceTree = "<group>"; };
+		7089C4FF1401EB9300055124 /* HCRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCRoom.h; sourceTree = "<group>"; };
+		7089C5001401EB9300055124 /* HCRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCRoom.m; sourceTree = "<group>"; };
+		7089C5011401EB9300055124 /* HCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCMessage.h; sourceTree = "<group>"; };
+		7089C5021401EB9300055124 /* HCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCMessage.m; sourceTree = "<group>"; };
+		7089C5031401EB9300055124 /* HCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUser.h; sourceTree = "<group>"; };
+		7089C5041401EB9300055124 /* HCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCUser.m; sourceTree = "<group>"; };
 		7089C5101401EF9300055124 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		7089C5111401EF9300055124 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		7089C5121401EF9300055124 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -153,6 +151,7 @@
 		7094E3F5141859E0002A09C5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7094E3F7141859E6002A09C5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		7094E3F914185A07002A09C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyCampfire.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,19 +240,19 @@
 			isa = PBXGroup;
 			children = (
 				7089C50F1401EF7F00055124 /* JSON */,
-				7089C4FF1401EB9300055124 /* Room.h */,
-				7089C5001401EB9300055124 /* Room.m */,
-				7089C5011401EB9300055124 /* Message.h */,
-				7089C5021401EB9300055124 /* Message.m */,
-				7089C5031401EB9300055124 /* User.h */,
-				7089C5041401EB9300055124 /* User.m */,
+				7089C4FF1401EB9300055124 /* HCRoom.h */,
+				7089C5001401EB9300055124 /* HCRoom.m */,
+				7089C5011401EB9300055124 /* HCMessage.h */,
+				7089C5021401EB9300055124 /* HCMessage.m */,
+				7089C5031401EB9300055124 /* HCUser.h */,
+				7089C5041401EB9300055124 /* HCUser.m */,
 				7089C4D814019A2900055124 /* ASIHTTPRequest */,
 				7089C4AD1401986F00055124 /* CampfireStreamingAppDelegate.h */,
 				7089C4AE1401986F00055124 /* CampfireStreamingAppDelegate.m */,
 				7089C4B01401986F00055124 /* MainMenu.xib */,
 				7089C4A21401986F00055124 /* Supporting Files */,
-				7089C4FC1401EB3800055124 /* Campfire.h */,
-				7089C4FD1401EB3800055124 /* Campfire.m */,
+				7089C4FC1401EB3800055124 /* HappyCampfire.h */,
+				70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */,
 				7089C56B1407300600055124 /* UploadFile.h */,
 				7089C56C1407300700055124 /* UploadFile.m */,
 			);
@@ -364,10 +363,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7094E43614186101002A09C5 /* ASIHTTPRequestDelegate.h in Headers */,
-				7094E42E14185DBA002A09C5 /* Room.h in Headers */,
-				7094E42F14185DBA002A09C5 /* Message.h in Headers */,
-				7094E43014185DBA002A09C5 /* User.h in Headers */,
-				7094E43114185DBA002A09C5 /* Campfire.h in Headers */,
+				7094E42E14185DBA002A09C5 /* HCRoom.h in Headers */,
+				7094E42F14185DBA002A09C5 /* HCMessage.h in Headers */,
+				7094E43014185DBA002A09C5 /* HCUser.h in Headers */,
+				7094E43114185DBA002A09C5 /* HappyCampfire.h in Headers */,
 				7094E43214185DBA002A09C5 /* UploadFile.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,10 +512,9 @@
 				7089C4F314019A3E00055124 /* ASIHTTPRequest.m in Sources */,
 				7089C4F414019A3E00055124 /* ASIInputStream.m in Sources */,
 				7089C4F514019A3E00055124 /* ASINetworkQueue.m in Sources */,
-				7089C4FE1401EB3800055124 /* Campfire.m in Sources */,
-				7089C5051401EB9300055124 /* Room.m in Sources */,
-				7089C5061401EB9400055124 /* Message.m in Sources */,
-				7089C5071401EB9400055124 /* User.m in Sources */,
+				7089C5051401EB9300055124 /* HCRoom.m in Sources */,
+				7089C5061401EB9400055124 /* HCMessage.m in Sources */,
+				7089C5071401EB9400055124 /* HCUser.m in Sources */,
 				7089C51D1401EF9300055124 /* NSObject+SBJSON.m in Sources */,
 				7089C51E1401EF9300055124 /* NSString+SBJSON.m in Sources */,
 				7089C51F1401EF9300055124 /* SBJSON.m in Sources */,
@@ -524,6 +522,7 @@
 				7089C5211401EF9300055124 /* SBJsonParser.m in Sources */,
 				7089C5221401EF9300055124 /* SBJsonWriter.m in Sources */,
 				7089C56D1407300700055124 /* UploadFile.m in Sources */,
+				70EE0C9E141D7E0D0005CBBC /* HappyCampfire.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +544,9 @@
 				7094E3E6141859B5002A09C5 /* SBJsonBase.m in Sources */,
 				7094E3E7141859B5002A09C5 /* SBJsonParser.m in Sources */,
 				7094E3E8141859B5002A09C5 /* SBJsonWriter.m in Sources */,
-				7094E3E9141859B5002A09C5 /* Room.m in Sources */,
-				7094E3EA141859B5002A09C5 /* Message.m in Sources */,
-				7094E3EB141859B5002A09C5 /* User.m in Sources */,
+				7094E3E9141859B5002A09C5 /* HCRoom.m in Sources */,
+				7094E3EA141859B5002A09C5 /* HCMessage.m in Sources */,
+				7094E3EB141859B5002A09C5 /* HCUser.m in Sources */,
 				7094E3EC141859B5002A09C5 /* ASIDataCompressor.m in Sources */,
 				7094E3ED141859B5002A09C5 /* ASIDataDecompressor.m in Sources */,
 				7094E3EE141859B5002A09C5 /* ASIDownloadCache.m in Sources */,
@@ -555,7 +554,6 @@
 				7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */,
 				7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */,
 				7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */,
-				7094E3F3141859B5002A09C5 /* Campfire.m in Sources */,
 				7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -776,6 +774,7 @@
 				7094E3E014185961002A09C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
