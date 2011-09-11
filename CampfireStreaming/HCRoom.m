@@ -6,10 +6,10 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Room.h"
+#import "HCRoom.h"
 
 
-@implementation Room
+@implementation HCRoom
 
 @synthesize name, topic, roomID, users;
 

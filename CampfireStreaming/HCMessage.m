@@ -6,9 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Message.h"
+#import "HCMessage.h"
 
-@implementation Message
+@implementation HCMessage
 
 @synthesize timeStamp;
 @synthesize messageId;

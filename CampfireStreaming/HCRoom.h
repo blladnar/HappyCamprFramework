@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Room : NSObject {
+@interface HCRoom : NSObject {
 @private
     
 }

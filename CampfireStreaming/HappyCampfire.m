@@ -6,20 +6,20 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Campfire.h"
+#import "HappyCampfire.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "SBJSON.h"
-#import "Room.h"
-#import "User.h"
+#import "HCRoom.h"
+#import "HCUser.h"
 
-@interface Campfire() 
+@interface HappyCampfire() 
 
--(User*)userWithUserElement:(NSXMLElement*)element;
+-(HCUser*)userWithUserElement:(NSXMLElement*)element;
 
 @end
 
-@implementation Campfire
+@implementation HappyCampfire
 @synthesize delegate;
 @synthesize authToken;
 
@@ -81,7 +81,7 @@
          continue;
       
       id messageDict = [jsonParser objectWithString:fixedString];
-      Message *message = [[[Message alloc] init] autorelease];
+      HCMessage *message = [[[HCMessage alloc] init] autorelease];
       
       message.messageBody = [messageDict objectForKey:@"body"];
       
@@ -158,7 +158,7 @@
 
       for( NSXMLElement *messageElement in messageElements )
       {
-         Message *message = [[Message new] autorelease];
+         HCMessage *message = [[HCMessage new] autorelease];
          
          message.messageId = [[[[messageElement elementsForName:@"id"] lastObject] stringValue] intValue];
          
@@ -192,7 +192,7 @@
       NSMutableArray *rooms = [NSMutableArray array];
       for( NSXMLElement *roomElement in roomElements )
       {
-         Room *room = [[Room new] autorelease];
+         HCRoom *room = [[HCRoom new] autorelease];
          
          room.roomID = [[[roomElement elementsForName:@"id"] lastObject] stringValue];
          room.name = [[[roomElement elementsForName:@"name"] lastObject] stringValue];
@@ -220,7 +220,7 @@
       NSMutableArray *rooms = [NSMutableArray array];
       for( NSXMLElement *roomElement in roomElements )
       {
-         Room *room = [[Room new] autorelease];
+         HCRoom *room = [[HCRoom new] autorelease];
          
          room.roomID = [[[roomElement elementsForName:@"id"] lastObject] stringValue];
          room.name = [[[roomElement elementsForName:@"name"] lastObject] stringValue];
@@ -235,7 +235,7 @@
    [request startAsynchronous];   
 }
 
--(void)getRoomWithID:(NSString*)roomID completionHandler:(void (^)(Room *room))handler
+-(void)getRoomWithID:(NSString*)roomID completionHandler:(void (^)(HCRoom *room))handler
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/room/%@.xml", campfireURL, roomID];
    
@@ -246,7 +246,7 @@
       
       NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
       
-      Room *room = [[Room new] autorelease];
+      HCRoom *room = [[HCRoom new] autorelease];
       NSXMLElement *roomElement = [responseDoc rootElement];
       
       room.roomID = [[[roomElement elementsForName:@"id"] lastObject] stringValue];
@@ -258,7 +258,7 @@
       
       for( NSXMLElement *userElement in userElements )
       {
-         User *user = [self userWithUserElement:userElement];
+         HCUser *user = [self userWithUserElement:userElement];
          
          [usersInRoom addObject:user];
       }
@@ -429,9 +429,9 @@
    [request startAsynchronous];     
 }
 
--(User*)userWithUserElement:(NSXMLElement*)element
+-(HCUser*)userWithUserElement:(NSXMLElement*)element
 {
-   User *user = [[User new] autorelease];
+   HCUser *user = [[HCUser new] autorelease];
    
    user.userID = [[[[element elementsForName:@"id"] lastObject] stringValue] intValue];
    user.name = [[[element elementsForName:@"name"] lastObject] stringValue];
@@ -442,7 +442,7 @@
    return user;
 }
 
--(void)getUserWithID:(NSString*)userID withCompletionHandler:(void(^)(User*user, NSError*error))handler
+-(void)getUserWithID:(NSString*)userID withCompletionHandler:(void(^)(HCUser*user, NSError*error))handler
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/users/%@.xml", campfireURL, userID];
    
@@ -452,7 +452,7 @@
       NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
       
       NSXMLElement *userElement = [responseDoc rootElement];
-      User *user = [self userWithUserElement:userElement];
+      HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       
    }];
@@ -460,7 +460,7 @@
    [request startAsynchronous];     
 }
 
--(void)getAuthenticatedUserInfo:(void(^)(User *user, NSError*error))handler
+-(void)getAuthenticatedUserInfo:(void(^)(HCUser *user, NSError*error))handler
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/users/me.xml", campfireURL];
    
@@ -470,7 +470,7 @@
       NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
       
       NSXMLElement *userElement = [responseDoc rootElement];
-      User *user = [self userWithUserElement:userElement];
+      HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       
    }];
@@ -478,7 +478,7 @@
    [request startAsynchronous];     
 }
 
--(void)authenticateUserWithName:(NSString*)userName password:(NSString*)password completionHandler:(void(^)(User *user, NSError*error))handler
+-(void)authenticateUserWithName:(NSString*)userName password:(NSString*)password completionHandler:(void(^)(HCUser *user, NSError*error))handler
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/users/me.xml", campfireURL];
    
@@ -490,7 +490,7 @@
       NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
       
       NSXMLElement *userElement = [responseDoc rootElement];
-      User *user = [self userWithUserElement:userElement];
+      HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       authToken = user.authToken;
       

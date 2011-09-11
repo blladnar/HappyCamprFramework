@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface HCUser : NSObject
 
 @property (assign) NSInteger userID;
 @property (retain) NSString* name;
