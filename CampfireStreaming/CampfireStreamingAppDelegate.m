@@ -119,6 +119,13 @@
       NSLog(@"%@",messages);
    }];
 }
+
+- (IBAction)SendTextMessage:(id)sender
+{
+   [campfire sendText:@"Hello World" toRoom:@"431886" completionHandler:^(HCMessage *message, NSError *error){
+      NSLog(@"%@", message);
+   }];
+}
 - (IBAction)GetUser:(id)sender 
 {
    [campfire getUserWithID:@"988871" withCompletionHandler:^(HCUser *user, NSError *error){

@@ -54,7 +54,7 @@
    [streamRequest setPassword:@"X"];
    [streamRequest setShouldAttemptPersistentConnection:YES];
    
-   [streamRequest startAsynchronous];   
+   [streamRequest startAsynchronous];
 }
 
 
@@ -98,9 +98,9 @@
    NSLog(@"%@", request);
 }
 
--(void)sendText:(NSString*)messageText toRoom:(NSString*)roomID
+-(void)sendText:(NSString*)messageText toRoom:(NSString*)roomID completionHandler:(void (^)(HCMessage* message, NSError*error))handler
 {   
-   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.xml",campfireURL,roomID];
+   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.json",campfireURL,roomID];
    
    __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
    
@@ -114,7 +114,12 @@
    [request setPostBody:(NSMutableData*)[postBody dataUsingEncoding:NSUTF8StringEncoding]];
    
    [request setCompletionBlock:^{
-      //  NSLog(@"%@", [request responseString]);
+      SBJsonParser *parser = [[SBJsonParser new] autorelease];
+      
+      id messageDict = [parser objectWithString:[request responseString]];
+      HCMessage *message = [HCMessage messageWithDictionary:[messageDict objectForKey:@"message"]];
+        NSLog(@"%@", [request responseString]);
+      handler( message, [request error] );
    }];
    
    [request startAsynchronous];   
@@ -127,7 +132,7 @@
    [request addRequestHeader:@"Content-Type" value:@"application/xml"];
    [request setAuthenticationScheme:(NSString *)kCFHTTPAuthenticationSchemeBasic];
    [request setUsername:authToken];
-   [request setPassword:@"X"];   
+   [request setPassword:@"X"];
    
    return request;
 }

@@ -33,5 +33,6 @@
 - (IBAction)UnlockRoom:(id)sender;
 - (IBAction)Authenticate:(id)sender;
 - (IBAction)GetMessagesSince:(id)sender;
+- (IBAction)SendTextMessage:(id)sender;
 
 @end

@@ -29,7 +29,7 @@
 
 - (id)initWithCampfireURL:(NSString*)campfireURL;
 -(void)startListeningForMessagesInRoom:(NSString*)roomID;
--(void)sendText:(NSString*)messageText toRoom:(NSString*)roomID;
+-(void)sendText:(NSString*)messageText toRoom:(NSString*)roomID completionHandler:(void (^)(HCMessage* message, NSError*error))handler;
 -(void)sendSound:(NSString*)sound toRoom:(NSString*)roomID;
 -(void)getMessagesFromRoom:(NSString*)roomID sinceID:(NSInteger)lastMessageID completionHandler:(void (^)(NSArray* messages))handler;
 
