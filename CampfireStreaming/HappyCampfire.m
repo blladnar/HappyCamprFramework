@@ -16,7 +16,7 @@
 
 @interface HappyCampfire() 
 
--(HCUser*)userWithUserElement:(NSXMLElement*)element;
+-(HCUser*)userWithUserElement:(GDataXMLElement*)element;
 
 @end
 
@@ -166,6 +166,7 @@
    [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
       
+      
       GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:responseString error:nil] autorelease];
       NSArray *roomElements = [element elementsForName:@"room"];
       NSMutableArray *rooms = [NSMutableArray array];
@@ -251,7 +252,7 @@
    [request startAsynchronous];    
 }
 
--(UploadFile *)uploadFileWithUploadElement:(NSXMLElement*)element
+-(UploadFile *)uploadFileWithUploadElement:(GDataXMLElement*)element
 {
    UploadFile *file = [[UploadFile new] autorelease];
    file.sizeInBytes = [[[[element elementsForName:@"byte-size"] lastObject] stringValue] intValue];
@@ -284,9 +285,9 @@
    [request setCompletionBlock:^{
       
       
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
+      GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
 
-      UploadFile *file = [self uploadFileWithUploadElement:[responseDoc rootElement]];
+      UploadFile *file = [self uploadFileWithUploadElement:element];
       
       handler(file,[request error]);
    }];
@@ -322,11 +323,11 @@
    [request setCompletionBlock:^{
       
       
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
+      GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
       
-      NSArray *uploadFileElements = [[responseDoc rootElement] elementsForName:@"upload"];
+      NSArray *uploadFileElements = [element elementsForName:@"upload"];
       NSMutableArray *uploadFiles = [NSMutableArray array];
-      for( NSXMLElement *uploadFileElement in uploadFileElements )
+      for( GDataXMLElement *uploadFileElement in uploadFileElements )
       {
          
          UploadFile *file = [self uploadFileWithUploadElement:uploadFileElement];
@@ -407,7 +408,7 @@
    [request startAsynchronous];     
 }
 
--(HCUser*)userWithUserElement:(NSXMLElement*)element
+-(HCUser*)userWithUserElement:(GDataXMLElement*)element
 {
    HCUser *user = [[HCUser new] autorelease];
    
@@ -427,9 +428,7 @@
    __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    
    [request setCompletionBlock:^{
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
-      
-      NSXMLElement *userElement = [responseDoc rootElement];
+      GDataXMLElement *userElement = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
       HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       
@@ -445,9 +444,8 @@
    __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    
    [request setCompletionBlock:^{
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
       
-      NSXMLElement *userElement = [responseDoc rootElement];
+      GDataXMLElement *userElement = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
       HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       
@@ -465,9 +463,8 @@
    [request setPassword:password];
    
    [request setCompletionBlock:^{
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:[request responseString] options:NSXMLDocumentTidyXML error:nil] autorelease];
-      
-      NSXMLElement *userElement = [responseDoc rootElement];
+      GDataXMLElement *userElement = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
+
       HCUser *user = [self userWithUserElement:userElement];
       handler( user, [request error] );
       authToken = user.authToken;
