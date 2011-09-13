@@ -112,6 +112,13 @@
       NSLog(@"%@",user.authToken);
    }];
 }
+
+- (IBAction)GetMessagesSince:(id)sender 
+{
+   [campfire getMessagesFromRoom:@"431886" sinceID:[[sinceMessageID stringValue] intValue] completionHandler:^(NSArray *messages){
+      NSLog(@"%@",messages);
+   }];
+}
 - (IBAction)GetUser:(id)sender 
 {
    [campfire getUserWithID:@"988871" withCompletionHandler:^(HCUser *user, NSError *error){
@@ -128,6 +135,11 @@
 - (IBAction)PlaySound:(id)sender 
 {
    [campfire sendSound:@"vuvuzela" toRoom:@"431886"];
+}
+
+-(void)listeningFailed:(NSError *)error
+{
+   NSLog(@"%@", error);
 }
 
 

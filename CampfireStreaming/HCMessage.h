@@ -13,6 +13,9 @@
    
 }
 
++(HCMessage*)messageWithJSON:(NSString*)jsonString;
++(HCMessage*)messageWithDictionary:(NSDictionary*)dictionary;
+
 @property (retain) NSDate *timeStamp;
 @property (assign) NSInteger messageId;
 @property (assign) NSInteger roomID;

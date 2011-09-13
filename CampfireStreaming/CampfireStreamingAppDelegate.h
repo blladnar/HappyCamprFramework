@@ -16,6 +16,7 @@
    NSOperationQueue *queue;
    IBOutlet NSTextField *username;
    IBOutlet NSSecureTextField *password;
+   IBOutlet NSTextField *sinceMessageID;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -31,5 +32,6 @@
 - (IBAction)LockRoom:(id)sender;
 - (IBAction)UnlockRoom:(id)sender;
 - (IBAction)Authenticate:(id)sender;
+- (IBAction)GetMessagesSince:(id)sender;
 
 @end

@@ -59,7 +59,7 @@
 
 -(void)request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
 {
-   NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+   NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
    
    if( !([data length] > 1) )
       return;
@@ -75,21 +75,11 @@
    
    for( NSString *fixedString in fixedMessageStrings )
    {
-      SBJsonParser *jsonParser = [[[SBJsonParser alloc] init] autorelease];
-      
       if( !([fixedString length] > 2) )
          continue;
       
-      id messageDict = [jsonParser objectWithString:fixedString];
-      HCMessage *message = [[[HCMessage alloc] init] autorelease];
-      
-      message.messageBody = [messageDict objectForKey:@"body"];
-      
-      
-      message.timeStamp = [NSDate dateWithString:[messageDict objectForKey:@"created_at"]];
-      message.messageId = [[messageDict objectForKey:@"id"] intValue];
-      message.messageType = [messageDict objectForKey:@"type"];
-      message.userID = [[messageDict objectForKey:@"user_id"] intValue];
+      HCMessage *message = [HCMessage messageWithJSON:fixedString];
+
       [delegate messageReceived:message];      
    }
    
@@ -120,7 +110,7 @@
    
    NSString *postBody = [self messageWithType:@"TextMessage" andMessage:messageText];
    
-   [request setPostBody:[postBody dataUsingEncoding:NSUTF8StringEncoding]];
+   [request setPostBody:(NSMutableData*)[postBody dataUsingEncoding:NSUTF8StringEncoding]];
    
    [request setCompletionBlock:^{
       //  NSLog(@"%@", [request responseString]);
@@ -144,32 +134,25 @@
 -(void)getMessagesFromRoom:(NSString*)roomID sinceID:(NSInteger)lastMessageID completionHandler:(void (^)(NSArray* messages))handler
 {
    
-   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/recent.xml?since_message_id=%i",campfireURL ,roomID, lastMessageID];
+   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/recent.json?since_message_id=%i",campfireURL ,roomID, lastMessageID];
    __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    
    [request setCompletionBlock:^{
       NSMutableArray *messages = [NSMutableArray array];
       
       NSString *responseString = [request responseString];
-      
+      NSLog(@"%@", responseString);
       NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
       
       NSArray *messageElements = [[responseDoc rootElement] elementsForName:@"message"];
 
-      for( NSXMLElement *messageElement in messageElements )
+      SBJsonParser *jsonParser = [[[SBJsonParser alloc] init] autorelease];
+      
+      id messageArray = [[jsonParser objectWithString:responseString] objectForKey:@"messages"];
+      
+      for( NSDictionary *messageDict in messageArray )
       {
-         HCMessage *message = [[HCMessage new] autorelease];
-         
-         message.messageId = [[[[messageElement elementsForName:@"id"] lastObject] stringValue] intValue];
-         
-         NSDateFormatter *dateFormatter = [[NSDateFormatter new] autorelease];
-         [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-         message.timeStamp = [dateFormatter dateFromString:[[[messageElement elementsForName:@"created-at"] lastObject] stringValue]];
-         message.roomID = [[[[messageElement elementsForName:@"room-id"] lastObject] stringValue] intValue];
-         message.userID = [[[[messageElement elementsForName:@"user-id"] lastObject] stringValue] intValue];
-         message.messageBody = [[[messageElement elementsForName:@"body"] lastObject] stringValue];
-         message.messageType = [[[messageElement elementsForName:@"type"] lastObject] stringValue];
+         HCMessage *message = [HCMessage messageWithDictionary:messageDict];
 
          [messages addObject:message];
       }
@@ -328,7 +311,7 @@
    NSString *postString = [NSString stringWithFormat:@"<room><name>%@</name><topic>%@</topic></room>", name, topic];
    
 
-   [request setPostBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+   [request setPostBody:(NSMutableData*)[postString dataUsingEncoding:NSUTF8StringEncoding]];
       [request setRequestMethod:@"PUT"];
    [request startAsynchronous];
    
@@ -338,7 +321,7 @@
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/uploads.xml", campfireURL, roomID];
    
-   __block ASIFormDataRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
+   __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
 
    
    [request setCompletionBlock:^{
@@ -513,7 +496,7 @@
    
    NSString *postBody = [self messageWithType:@"SoundMessage" andMessage:sound];
    
-   [request setPostBody:[postBody dataUsingEncoding:NSUTF8StringEncoding]];
+   [request setPostBody:(NSMutableData*)[postBody dataUsingEncoding:NSUTF8StringEncoding]];
    
    [request setCompletionBlock:^{
       //  NSLog(@"%@", [request responseString]);
