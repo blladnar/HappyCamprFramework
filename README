@@ -6,19 +6,19 @@ The framework is designed to be asynchronous and uses ASIHTTPRequest for the net
 
 To get started you'll create an object like this
 
-HappyCampfire campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://yourCampfireURL.campfirenow.com"];
+```HappyCampfire campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://yourCampfireURL.campfirenow.com"];
 campfire.delegate = self; // for using the streaming api
 campfire.authToken = @"YOUR_AUTH_TOKEN";
-
+```
 You can also authenticate using the campfire object.
-   [campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(HCUser* user, NSError *error){
+```   [campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(HCUser* user, NSError *error){
       NSLog(@"%@",user.authToken);
-   }];
+   }];```
 Authenticating this way will store the authToken inside the HappyCampfire object so you won't have to set it yourself.
 
 Sending a message is simple
-   [campfire sendText:@"Hello World" toRoom:@"ROOM_ID" completionHandler:^(HCMessage *message, NSError *error){
+```   [campfire sendText:@"Hello World" toRoom:@"ROOM_ID" completionHandler:^(HCMessage *message, NSError *error){
       NSLog(@"%@", message);
-   }];
+   }];```
 
 Everything else uses blocks to get call backs. All of the blocks will be called on the main thread.
