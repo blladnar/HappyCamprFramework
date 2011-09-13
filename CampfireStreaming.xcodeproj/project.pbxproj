@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7017CE47141EED720084FB1D /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7017CE46141EED710084FB1D /* GDataXMLNode.m */; };
+		7017CE4A141EEE790084FB1D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017CE49141EEE790084FB1D /* libxml2.dylib */; };
+		7017CE4C141EEE820084FB1D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017CE4B141EEE820084FB1D /* libxml2.dylib */; };
 		7089C49C1401986F00055124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
 		7089C4A61401986F00055124 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4A41401986F00055124 /* InfoPlist.strings */; };
 		7089C4A81401986F00055124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4A71401986F00055124 /* main.m */; };
@@ -80,6 +83,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7017CE45141EED710084FB1D /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		7017CE46141EED710084FB1D /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		7017CE49141EEE790084FB1D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7017CE4B141EEE820084FB1D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7089C4971401986F00055124 /* CampfireStreaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampfireStreaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7089C49B1401986F00055124 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7089C49E1401986F00055124 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -159,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7017CE4C141EEE820084FB1D /* libxml2.dylib in Frameworks */,
 				7089C4FB14019AA000055124 /* CoreServices.framework in Frameworks */,
 				7089C4F914019A9600055124 /* libz.dylib in Frameworks */,
 				7089C4F714019A8C00055124 /* SystemConfiguration.framework in Frameworks */,
@@ -179,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7017CE4A141EEE790084FB1D /* libxml2.dylib in Frameworks */,
 				7094E3FA14185A07002A09C5 /* SystemConfiguration.framework in Frameworks */,
 				7094E3F8141859E6002A09C5 /* CoreServices.framework in Frameworks */,
 				7094E3F6141859E0002A09C5 /* libz.dylib in Frameworks */,
@@ -192,6 +201,8 @@
 		7089C48C1401986F00055124 = {
 			isa = PBXGroup;
 			children = (
+				7017CE4B141EEE820084FB1D /* libxml2.dylib */,
+				7017CE49141EEE790084FB1D /* libxml2.dylib */,
 				7094E3F914185A07002A09C5 /* SystemConfiguration.framework */,
 				7094E3F7141859E6002A09C5 /* CoreServices.framework */,
 				7094E3F5141859E0002A09C5 /* libz.dylib */,
@@ -239,6 +250,8 @@
 		7089C4A11401986F00055124 /* CampfireStreaming */ = {
 			isa = PBXGroup;
 			children = (
+				7017CE45141EED710084FB1D /* GDataXMLNode.h */,
+				7017CE46141EED710084FB1D /* GDataXMLNode.m */,
 				7089C50F1401EF7F00055124 /* JSON */,
 				7089C4FF1401EB9300055124 /* HCRoom.h */,
 				7089C5001401EB9300055124 /* HCRoom.m */,
@@ -523,6 +536,7 @@
 				7089C5221401EF9300055124 /* SBJsonWriter.m in Sources */,
 				7089C56D1407300700055124 /* UploadFile.m in Sources */,
 				70EE0C9E141D7E0D0005CBBC /* HappyCampfire.m in Sources */,
+				7017CE47141EED720084FB1D /* GDataXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +676,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "CampfireStreaming/CampfireStreaming-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -673,6 +688,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampfireStreaming/CampfireStreaming-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "CampfireStreaming/CampfireStreaming-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -715,6 +731,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HappyCampfire/HappyCampfire-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "HappyCampfire/HappyCampfire-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Resources/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -730,6 +747,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HappyCampfire/HappyCampfire-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "HappyCampfire/HappyCampfire-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Resources/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

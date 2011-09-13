@@ -12,6 +12,7 @@
 #import "SBJSON.h"
 #import "HCRoom.h"
 #import "HCUser.h"
+#import "GDataXMLNode.h"
 
 @interface HappyCampfire() 
 
@@ -141,10 +142,6 @@
       NSMutableArray *messages = [NSMutableArray array];
       
       NSString *responseString = [request responseString];
-      NSLog(@"%@", responseString);
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
-      
-      NSArray *messageElements = [[responseDoc rootElement] elementsForName:@"message"];
 
       SBJsonParser *jsonParser = [[[SBJsonParser alloc] init] autorelease];
       
@@ -168,12 +165,11 @@
    __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
-
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
       
-      NSArray *roomElements = [[responseDoc rootElement] elementsForName:@"room"];
+      GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:responseString error:nil] autorelease];
+      NSArray *roomElements = [element elementsForName:@"room"];
       NSMutableArray *rooms = [NSMutableArray array];
-      for( NSXMLElement *roomElement in roomElements )
+      for( GDataXMLElement *roomElement in roomElements )
       {
          HCRoom *room = [[HCRoom new] autorelease];
          
