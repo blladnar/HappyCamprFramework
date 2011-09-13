@@ -17,6 +17,7 @@
 @interface HappyCampfire() 
 
 -(HCUser*)userWithUserElement:(GDataXMLElement*)element;
+-(ASIHTTPRequest*)requestWithURL:(NSURL*)url;
 
 @end
 
@@ -102,12 +103,8 @@
 {   
    NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.json",campfireURL,roomID];
    
-   __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
+   __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    
-   [request addRequestHeader:@"Content-Type" value:@"application/xml"];
-   [request setAuthenticationScheme:(NSString *)kCFHTTPAuthenticationSchemeBasic];
-   [request setUsername:authToken];
-   [request setPassword:@"X"];
    
    NSString *postBody = [self messageWithType:@"TextMessage" andMessage:messageText];
    
@@ -118,7 +115,6 @@
       
       id messageDict = [parser objectWithString:[request responseString]];
       HCMessage *message = [HCMessage messageWithDictionary:[messageDict objectForKey:@"message"]];
-        NSLog(@"%@", [request responseString]);
       handler( message, [request error] );
    }];
    
@@ -479,24 +475,24 @@
    [request startAsynchronous];     
 }
 
--(void)sendSound:(NSString*)sound toRoom:(NSString*)roomID
+-(void)sendSound:(NSString*)sound toRoom:(NSString*)roomID completionHandler:(void (^)(HCMessage* message, NSError*error))handler
 {
-   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.xml",campfireURL,roomID];
+   NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/speak.json",campfireURL,roomID];
    
    
-   __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
-   
-   [request addRequestHeader:@"Content-Type" value:@"application/xml"];
-   [request setAuthenticationScheme:(NSString *)kCFHTTPAuthenticationSchemeBasic];
-   [request setUsername:authToken];
-   [request setPassword:@"X"];
+   __block ASIHTTPRequest *request = [self requestWithURL:[NSURL URLWithString:urlString]];
    
    NSString *postBody = [self messageWithType:@"SoundMessage" andMessage:sound];
    
    [request setPostBody:(NSMutableData*)[postBody dataUsingEncoding:NSUTF8StringEncoding]];
    
    [request setCompletionBlock:^{
-      //  NSLog(@"%@", [request responseString]);
+      SBJsonParser *parser = [[SBJsonParser new] autorelease];
+      
+      id messageDict = [parser objectWithString:[request responseString]];
+      HCMessage *message = [HCMessage messageWithDictionary:[messageDict objectForKey:@"message"]];
+
+      handler( message, [request error] );
    }];
    
    [request startAsynchronous];      

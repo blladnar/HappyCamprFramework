@@ -141,7 +141,9 @@
 
 - (IBAction)PlaySound:(id)sender 
 {
-   [campfire sendSound:@"vuvuzela" toRoom:@"431886"];
+   [campfire sendSound:@"vuvuzela" toRoom:@"431886" completionHandler:^(HCMessage *message, NSError *error){
+      NSLog(@"%@", message);
+   }];
 }
 
 -(void)listeningFailed:(NSError *)error
