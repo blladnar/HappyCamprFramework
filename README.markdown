@@ -12,16 +12,20 @@ campfire.delegate = self; // for using the streaming api
 campfire.authToken = @"YOUR_AUTH_TOKEN";
 ```
 You can also authenticate using the campfire object.
+
 ```   
-[campfire authenticateUserWithName:[username stringValue] password:[password stringValue] completionHandler:^(HCUser* user, NSError *error){
+[campfire authenticateUserWithName:[username stringValue] password:[password stringValue] 
+                                                 completionHandler:^(HCUser* user, NSError *error){
       NSLog(@"%@",user.authToken);
    }];
 ```
 Authenticating this way will store the authToken inside the HappyCampfire object so you won't have to set it yourself.
 
 Sending a message is simple
+
 ```
-[campfire sendText:@"Hello World" toRoom:@"ROOM_ID" completionHandler:^(HCMessage *message, NSError *error){
+[campfire sendText:@"Hello World" toRoom:@"ROOM_ID" 
+                       completionHandler:^(HCMessage *message, NSError *error){
       NSLog(@"%@", message);
    }];
 ```
