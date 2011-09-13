@@ -193,11 +193,11 @@
    [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
       
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
+      GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:responseString error:nil] autorelease];
       
-      NSArray *roomElements = [[responseDoc rootElement] elementsForName:@"room"];
+      NSArray *roomElements = [element elementsForName:@"room"];
       NSMutableArray *rooms = [NSMutableArray array];
-      for( NSXMLElement *roomElement in roomElements )
+      for( GDataXMLElement *roomElement in roomElements )
       {
          HCRoom *room = [[HCRoom new] autorelease];
          
@@ -222,20 +222,19 @@
    
    [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
-      
-      NSXMLDocument *responseDoc = [[[NSXMLDocument alloc] initWithXMLString:responseString options:NSXMLDocumentTidyXML error:nil] autorelease];
+
       
       HCRoom *room = [[HCRoom new] autorelease];
-      NSXMLElement *roomElement = [responseDoc rootElement];
+      GDataXMLElement *roomElement = [[[GDataXMLElement alloc] initWithXMLString:responseString error:nil] autorelease];
       
       room.roomID = [[[roomElement elementsForName:@"id"] lastObject] stringValue];
       room.name = [[[roomElement elementsForName:@"name"] lastObject] stringValue];
       room.topic = [[[roomElement elementsForName:@"topic"] lastObject] stringValue];
       
-      NSArray *userElements = [[[[responseDoc rootElement] elementsForName:@"users"] lastObject] elementsForName:@"user"];
+      NSArray *userElements = [[[roomElement elementsForName:@"users"] lastObject] elementsForName:@"user"];
       NSMutableArray *usersInRoom = [NSMutableArray array];
       
-      for( NSXMLElement *userElement in userElements )
+      for( GDataXMLElement *userElement in userElements )
       {
          HCUser *user = [self userWithUserElement:userElement];
          
