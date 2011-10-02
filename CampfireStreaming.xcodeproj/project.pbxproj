@@ -10,6 +10,8 @@
 		7017CE47141EED720084FB1D /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7017CE46141EED710084FB1D /* GDataXMLNode.m */; };
 		7017CE4A141EEE790084FB1D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017CE49141EEE790084FB1D /* libxml2.dylib */; };
 		7017CE4C141EEE820084FB1D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017CE4B141EEE820084FB1D /* libxml2.dylib */; };
+		7070C000142A3671004EC2FA /* HappyCampfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */; };
+		7070C001142A36CB004EC2FA /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7017CE46141EED710084FB1D /* GDataXMLNode.m */; };
 		7089C49C1401986F00055124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
 		7089C4A61401986F00055124 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7089C4A41401986F00055124 /* InfoPlist.strings */; };
 		7089C4A81401986F00055124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4A71401986F00055124 /* main.m */; };
@@ -40,7 +42,7 @@
 		7089C5201401EF9300055124 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5181401EF9300055124 /* SBJsonBase.m */; };
 		7089C5211401EF9300055124 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51A1401EF9300055124 /* SBJsonParser.m */; };
 		7089C5221401EF9300055124 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C51C1401EF9300055124 /* SBJsonWriter.m */; };
-		7089C56D1407300700055124 /* UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* UploadFile.m */; };
+		7089C56D1407300700055124 /* HCUploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* HCUploadFile.m */; };
 		7094E3D414185961002A09C5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089C49B1401986F00055124 /* Cocoa.framework */; };
 		7094E3DA14185961002A09C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7094E3D814185961002A09C5 /* InfoPlist.strings */; };
 		7094E3E3141859B5002A09C5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C5121401EF9300055124 /* NSObject+SBJSON.m */; };
@@ -59,7 +61,7 @@
 		7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4E614019A3E00055124 /* ASIHTTPRequest.m */; };
 		7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EA14019A3E00055124 /* ASIInputStream.m */; };
 		7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C4EC14019A3E00055124 /* ASINetworkQueue.m */; };
-		7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* UploadFile.m */; };
+		7094E3F4141859B5002A09C5 /* HCUploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7089C56C1407300700055124 /* HCUploadFile.m */; };
 		7094E3F6141859E0002A09C5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F5141859E0002A09C5 /* libz.dylib */; };
 		7094E3F8141859E6002A09C5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F7141859E6002A09C5 /* CoreServices.framework */; };
 		7094E3FA14185A07002A09C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094E3F914185A07002A09C5 /* SystemConfiguration.framework */; };
@@ -67,7 +69,7 @@
 		7094E42F14185DBA002A09C5 /* HCMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5011401EB9300055124 /* HCMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7094E43014185DBA002A09C5 /* HCUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C5031401EB9300055124 /* HCUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7094E43114185DBA002A09C5 /* HappyCampfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4FC1401EB3800055124 /* HappyCampfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7094E43214185DBA002A09C5 /* UploadFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C56B1407300600055124 /* UploadFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7094E43214185DBA002A09C5 /* HCUploadFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C56B1407300600055124 /* HCUploadFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7094E43614186101002A09C5 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7089C4E814019A3E00055124 /* ASIHTTPRequestDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70EE0C9E141D7E0D0005CBBC /* HappyCampfire.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */; };
 /* End PBXBuildFile section */
@@ -149,8 +151,8 @@
 		7089C51A1401EF9300055124 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		7089C51B1401EF9300055124 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		7089C51C1401EF9300055124 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		7089C56B1407300600055124 /* UploadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadFile.h; sourceTree = "<group>"; };
-		7089C56C1407300700055124 /* UploadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadFile.m; sourceTree = "<group>"; };
+		7089C56B1407300600055124 /* HCUploadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCUploadFile.h; sourceTree = "<group>"; };
+		7089C56C1407300700055124 /* HCUploadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCUploadFile.m; sourceTree = "<group>"; };
 		7094E3D314185961002A09C5 /* HappyCampfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HappyCampfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7094E3D714185961002A09C5 /* HappyCampfire-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyCampfire-Info.plist"; sourceTree = "<group>"; };
 		7094E3D914185961002A09C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -167,9 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7017CE4C141EEE820084FB1D /* libxml2.dylib in Frameworks */,
+				7089C4F714019A8C00055124 /* SystemConfiguration.framework in Frameworks */,
 				7089C4FB14019AA000055124 /* CoreServices.framework in Frameworks */,
 				7089C4F914019A9600055124 /* libz.dylib in Frameworks */,
-				7089C4F714019A8C00055124 /* SystemConfiguration.framework in Frameworks */,
 				7089C49C1401986F00055124 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,8 +268,8 @@
 				7089C4A21401986F00055124 /* Supporting Files */,
 				7089C4FC1401EB3800055124 /* HappyCampfire.h */,
 				70EE0C9D141D7E0D0005CBBC /* HappyCampfire.m */,
-				7089C56B1407300600055124 /* UploadFile.h */,
-				7089C56C1407300700055124 /* UploadFile.m */,
+				7089C56B1407300600055124 /* HCUploadFile.h */,
+				7089C56C1407300700055124 /* HCUploadFile.m */,
 			);
 			path = CampfireStreaming;
 			sourceTree = "<group>";
@@ -380,7 +382,7 @@
 				7094E42F14185DBA002A09C5 /* HCMessage.h in Headers */,
 				7094E43014185DBA002A09C5 /* HCUser.h in Headers */,
 				7094E43114185DBA002A09C5 /* HappyCampfire.h in Headers */,
-				7094E43214185DBA002A09C5 /* UploadFile.h in Headers */,
+				7094E43214185DBA002A09C5 /* HCUploadFile.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +536,7 @@
 				7089C5201401EF9300055124 /* SBJsonBase.m in Sources */,
 				7089C5211401EF9300055124 /* SBJsonParser.m in Sources */,
 				7089C5221401EF9300055124 /* SBJsonWriter.m in Sources */,
-				7089C56D1407300700055124 /* UploadFile.m in Sources */,
+				7089C56D1407300700055124 /* HCUploadFile.m in Sources */,
 				70EE0C9E141D7E0D0005CBBC /* HappyCampfire.m in Sources */,
 				7017CE47141EED720084FB1D /* GDataXMLNode.m in Sources */,
 			);
@@ -552,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7070C001142A36CB004EC2FA /* GDataXMLNode.m in Sources */,
 				7094E3E3141859B5002A09C5 /* NSObject+SBJSON.m in Sources */,
 				7094E3E4141859B5002A09C5 /* NSString+SBJSON.m in Sources */,
 				7094E3E5141859B5002A09C5 /* SBJSON.m in Sources */,
@@ -568,7 +571,8 @@
 				7094E3F0141859B5002A09C5 /* ASIHTTPRequest.m in Sources */,
 				7094E3F1141859B5002A09C5 /* ASIInputStream.m in Sources */,
 				7094E3F2141859B5002A09C5 /* ASINetworkQueue.m in Sources */,
-				7094E3F4141859B5002A09C5 /* UploadFile.m in Sources */,
+				7070C000142A3671004EC2FA /* HappyCampfire.m in Sources */,
+				7094E3F4141859B5002A09C5 /* HCUploadFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
