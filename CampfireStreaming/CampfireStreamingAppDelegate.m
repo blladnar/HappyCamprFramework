@@ -17,7 +17,7 @@
 {
    campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://randallbrown.campfirenow.com"];
    campfire.delegate = self;
-   campfire.authToken = @"60507110c014abd367f2532fcbc65007ee8861f0";
+   campfire.authToken = @"YOUR_AUTH_TOKEN";
 //   [campfire sendText:@"this is a test" toRoom:@"412475"];
 //   
 //   [campfire getMessagesFromRoom:@"412475" sinceID:0 completionHandler:^(NSArray* messages)
