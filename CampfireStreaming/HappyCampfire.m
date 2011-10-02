@@ -253,9 +253,9 @@
    [request startAsynchronous];    
 }
 
--(UploadFile *)uploadFileWithUploadElement:(GDataXMLElement*)element
+-(HCUploadFile *)uploadFileWithUploadElement:(GDataXMLElement*)element
 {
-   UploadFile *file = [[UploadFile new] autorelease];
+   HCUploadFile *file = [[HCUploadFile new] autorelease];
    file.sizeInBytes = [[[[element elementsForName:@"byte-size"] lastObject] stringValue] intValue];
    file.fullURL = [[[element elementsForName:@"full-url"] lastObject] stringValue];
    file.contentType = [[[element elementsForName:@"content-type"] lastObject] stringValue];
@@ -271,7 +271,7 @@
    return file;
 }
 
--(void)postFile:(NSString*)file toRoom:(NSString*)roomID completionHandler:(void (^)(UploadFile *file, NSError *error))handler
+-(void)postFile:(NSString*)file toRoom:(NSString*)roomID completionHandler:(void (^)(HCUploadFile *file, NSError *error))handler
 {
    NSString *urlString = [NSString stringWithFormat:@"%@/room/%@/uploads.xml", campfireURL, roomID];
    
@@ -288,7 +288,7 @@
       
       GDataXMLElement *element = [[[GDataXMLElement alloc] initWithXMLString:[request responseString] error:nil] autorelease];
 
-      UploadFile *file = [self uploadFileWithUploadElement:element];
+      HCUploadFile *file = [self uploadFileWithUploadElement:element];
       
       handler(file,[request error]);
    }];
@@ -331,7 +331,7 @@
       for( GDataXMLElement *uploadFileElement in uploadFileElements )
       {
          
-         UploadFile *file = [self uploadFileWithUploadElement:uploadFileElement];
+         HCUploadFile *file = [self uploadFileWithUploadElement:uploadFileElement];
          [uploadFiles addObject:file];
       }
       

@@ -64,7 +64,7 @@
    NSOpenPanel *open = [NSOpenPanel openPanel];
    [open runModal];
    
-   [campfire postFile:[[[open URLs] lastObject] path]toRoom:@"431886" completionHandler:^(UploadFile* file,NSError* error)
+   [campfire postFile:[[[open URLs] lastObject] path]toRoom:@"431886" completionHandler:^(HCUploadFile* file,NSError* error)
     {
        NSLog(@"%@", file.fullURL);
        NSLog(@"%@", error);

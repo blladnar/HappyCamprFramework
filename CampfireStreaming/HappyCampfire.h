@@ -10,7 +10,7 @@
 #import "ASIHTTPRequestDelegate.h"
 #import "HCMessage.h"
 #import "HCRoom.h"
-#import "UploadFile.h"
+#import "HCUploadFile.h"
 #import "HCUser.h"
 
 @protocol CampfireResponseProtocol
@@ -37,7 +37,7 @@
 -(void)getVisibleRoomsWithHandler:(void (^)(NSArray* rooms))handler;
 -(void)getRoomsAuthenticatedUserIsInWithHandler:(void (^)(NSArray* rooms))handler;
 -(void)getRoomWithID:(NSString*)roomID completionHandler:(void (^)(HCRoom *room))handler;
--(void)postFile:(NSString*)file toRoom:(NSString*)roomID completionHandler:(void (^)(UploadFile *file, NSError *error))handler;
+-(void)postFile:(NSString*)file toRoom:(NSString*)roomID completionHandler:(void (^)(HCUploadFile *file, NSError *error))handler;
 -(void)updateRoom:(NSString*)roomID topic:(NSString*)topic name:(NSString*)name completionHandler:(void (^)(NSError *error))handler;
 -(void)getRecentlyUploadedFilesFromRoom:(NSString*)roomID completionHandler:(void (^)(NSArray *files, NSError *error))handler;
 
