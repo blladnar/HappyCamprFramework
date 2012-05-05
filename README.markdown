@@ -7,7 +7,7 @@ The framework is designed to be asynchronous and uses ASIHTTPRequest for the net
 To get started you'll create an object like this
 
 ```objc
-HappyCampfire campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://yourCampfireURL.campfirenow.com"];
+HappyCampfire *campfire = [[HappyCampfire alloc] initWithCampfireURL:@"https://yourCampfireURL.campfirenow.com"];
 campfire.delegate = self; // for using the streaming api
 campfire.authToken = @"YOUR_AUTH_TOKEN";
 ```
